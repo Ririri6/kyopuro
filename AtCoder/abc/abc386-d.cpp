@@ -16,7 +16,7 @@ int main(){
         cin>>X[i]>>Y[i]>>C[i];
     }
     
-    for(int i=0;i<M;i++)
+    
     
     
 
