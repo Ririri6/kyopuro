@@ -6,4 +6,5 @@ int main(){
     cin>>a>>b;
 
     cout<<a+b<<endl;
+    cout<<"hello"<<endl;2
 }
