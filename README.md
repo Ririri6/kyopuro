@@ -3,3 +3,5 @@
   - AtCoderディレクトリ
 - アルゴ式
   - algoディレクトリ
+- paiza
+  - paizaディレクトリ
