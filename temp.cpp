@@ -1,10 +1,6 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<string>
-#include<map>
+#include <bits/stdc++.h>
 using namespace std;
-
-int main(){
-    
+ 
+int main() {
+  
 }

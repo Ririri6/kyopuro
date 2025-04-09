@@ -14,16 +14,25 @@ int main(){
         cin>>S[i];
     }
 
-    set<string>st;
-    for(long long i=0;i<N;i++){
-        st.insert(S[i]);
+    map<string,int>m;
+
+    
+
+    for (int i = 0; i < N; i++) {
+        m[S[i]]++;
     }
 
-    
-    
 
-
+    int max=0;
+    string result;
+    for(auto& x:m){
+        
+        if(x.second>max){
+             max=x.second;
+             result=x.first;
+        }
+    }
     
-
+    cout<< result <<endl;
 
 }
