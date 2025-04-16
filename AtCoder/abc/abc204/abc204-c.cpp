@@ -1,28 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
+
+// グラフを表すデータ構造
+using Graph = vector<vector<int>>;
+
 int main() {
-  int N,M;
-  cin>>N>>M;
+	// 入力
+	int N, M;
+	cin >> N >> M;
+	Graph G(N);
+	for (int i = 0; i < M; ++i) {
+		int A, B;
+		cin >> A >> B;
 
-  vector<int> A(M);
-  vector<int> B(M);
+		// 頂点 A から頂点 B への辺を張る
+		G[A].push_back(B);
+	}
 
-  for(int i=0;i<M;i++){
-    cin>>A[i]>>B[i];
-  }
-  
-  /*スタート地点を固定したとき
-  ゴール地点にできる都市の個数を数えることを
-  考えてみましょう.
-
-  ゴール地点にできる都市は、
-  スタート地点からいくつかの道路を使って
-  到達できるような都市です。そのような都市は、
-  DFSやBFSなどの探索アルゴリズムを用いて求めることができます
-  
-  */
   int ans=0;
 
-
+  for(int i=0;i<N;i++){
+    
+  }
 }
