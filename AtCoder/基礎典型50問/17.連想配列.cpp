@@ -5,20 +5,24 @@ int main() {
   long long N;
   cin>>N;
 
-  vector<long long> A(N);
+  map<long long,long long> A;
+  int num;
   for(int i=0;i<N;i++){
-    cin>>A[i];
+    cin>>num;
+    A[num]++;
   }
 
-  long long ans=0;
+  long long ans=N*(N-1)/2;
 
-  for(int i=0;i<N;i++){
-    for(int j=i+1;j<N;j++){
-        if(A[i]!=A[j]){
-            ans++;
-        }
+  for(auto a:A){
+    if(a.second>=2){
+      ans-=(a.second*(a.second-1)/2);
     }
   }
+
+
+
+  
   
   cout<<ans<<endl;
 
