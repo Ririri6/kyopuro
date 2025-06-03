@@ -6,26 +6,31 @@ int main() {
   cin>>M;
 
   vector<int> D(M);
+  int sum=0;
+
   for(int i=0;i<M;i++){
     cin>>D[i];
+    sum+=D[i];
   }
 
-  int y=1;
-  for(int i=0;i<M;i++){
-    y+=D[i];
-  }
-  y/=2;
-  cout<<y<<endl;
-  int sum=0;
-  for(int i=0;i<M;i++){
-    sum+=D[i];
-    cout<<sum<<endl;
-    if(sum>=y){
-        int a=sum-D[i];
-        int b=sum;
-        int n=min(abs(y-a),abs(y-b));
-        cout<<i+1<<" "<<abs(n-y)<<endl;
-        return 0;
+
+  
+    int a=0;
+    int j=0;
+    while(a<(sum/2)+1){
+       a+=D[j];
+       j++;
     }
-  }
+    
+    if(a==(sum/2)+1){
+      cout<<j<<" "<<D[j-1]<<endl;
+      return 0;
+    }else{
+      cout<<j<<" "<<((sum/2)+1)-(a-D[j-1])<<endl;
+      return 0;
+    }
+  
+  
+  
+  
 }
