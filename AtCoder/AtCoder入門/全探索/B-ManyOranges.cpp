@@ -5,13 +5,19 @@ int main() {
   int A,B,W;
   cin>>A>>B>>W;
 
-  int max=0;
-  int min=W*1000;
-  
-  int w=W*1000;
-  int u=w/A;
+ int m=1e9,M=0;
 
+  for(int i=1;i<=1000000;i++){
+     if(A*i<=1000*W && B*i>=1000*W){
+        m=min(m,i);
+        M=max(M,i);
+     }
+  }
   
- 
+  if(M==0){
+    cout<<"UNSATISFIABLE"<<endl;
+  }else{
+    cout<<m<<" "<<M<<endl;
+  }
 
 }

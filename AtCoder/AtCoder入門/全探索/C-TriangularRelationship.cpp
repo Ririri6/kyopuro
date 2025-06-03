@@ -5,12 +5,24 @@ int main() {
   long long N,K;
   cin>>N>>K;
 
-  int ans=0;
+  long long ans=0;
 
-  for(int a=1;a<=N;a++){
-    int a1=a%K;
-    
+  vector<long long> A(K);
+  for(int i=1;i<=N;i++){
+    A[i%K]++;
   }
+  
+  //aはKで割ったあまり
+  //整数を見るんじゃなくて余りで見ていく
+  for(int a=0;a<K;a++){
+    int b=(K-a)%K;
+    int c=(K-a)%K;
+    if((b+c)%K==0){
+      ans+=A[a]*A[b]*A[c];
+    }
+  }
+
+
 
   cout<<ans<<endl;
 }
