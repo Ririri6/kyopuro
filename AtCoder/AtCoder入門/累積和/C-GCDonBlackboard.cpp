@@ -10,8 +10,7 @@ int main() {
     cin>>A[i];
   }
 
-  sort(A.begin(),A.end());
-  for(int i=A[N-1];i>=1;i--){
+  for(int i=0;i<N;i++){
     
   }
 
