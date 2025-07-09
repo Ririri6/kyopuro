@@ -1,26 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int main() {
-  int N,K;
-  cin>>N>>K;
-
+  int N, K;
   string S;
-  cin>>S;
-
-  vector<int> M;
-  for(int i=0;i<N;){
-    int j=i;
-    int num=0;
-    while(true){
-        if(S[i]==S[j]){
-            num++;
-        }else{
-            M.push_back(num);
-            break;
-        }
-        j++;
-    }
-    i=j;
+  cin >> N >> K >> S;
+  int a = 0;
+  for (int i = 0; i + 1 < N; ++i) {
+    if (S[i] != S[i+1]){
+        a++;
+    } 
   }
+  cout << N - 1 - max(a - K*2, 0) << endl;
 }
