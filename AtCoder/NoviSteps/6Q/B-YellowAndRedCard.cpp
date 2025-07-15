@@ -14,9 +14,9 @@ int main() {
     int num,x;
     cin>>num>>x;
 
-    if(x==1){
+    if(num==1){
         P[x]+=1;
-    }else if(x==2){
+    }else if(num==2){
         P[x]+=2;
     }else{
         if(P[x]>=2){

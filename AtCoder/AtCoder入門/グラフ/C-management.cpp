@@ -2,24 +2,23 @@
 using namespace std;
 
 // グラフを表すデータ構造
-using Graph = vector<vector<int>>;
+using Graph = vector<vector<long long>>;
 
 int main() {
-	// 入力
-	int N, M;
-	cin >> N >> M;
-	Graph G(N);
-	for (int i = 0; i < M; ++i) {
-		int A, B;
-		cin >> A >> B;
+	long long N;
+	cin>>N;
 
-        A--;
-        B--;
+	vector<long long> A(N-1);
+    Graph G(N);
+	for(int i=0;i<N-1;i++){
+		cin>>A[i];
 
-		// 頂点 A から頂点 B への辺を張る
-		G[A].push_back(B);
-		
-		// 無向グラフの場合は次も実施
-		// G[B].push_back(A);
+		G[A[i]-1].push_back(i+2);
 	}
+    
+	for(int i=0;i<N;i++){
+		cout<<G[i].size()<<endl;
+	}
+	
+    
 }
