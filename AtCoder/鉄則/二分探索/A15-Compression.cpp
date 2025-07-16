@@ -11,25 +11,37 @@ int main() {
   for(int i=0;i<N;i++){
     cin>>A[i];
   }
-  
   T=A;
+
   sort(T.begin(),T.end());
+  vector<long long> S;
+  S.push_back(T[0]);
+  for(int i=1;i<N;i++){
+    if(T[i]!=T[i-1]){
+        S.push_back(T[i]);
+    }
+  }
 
   for(int i=0;i<N;i++){
     long long l=0;
-    long long r=N-1;
+    long long r=S.size()-1;
     long long c=(l+r)/2;
-    while(r>l){
-        if(A[i]>T[c]){
-            l=c-1;
-        }else if(A[i]<T[c]){
-            r=c;
+    while(r>=l){
+        if(A[i]>S[c]){
+            l=c+1;
+        }else if(A[i]<S[c]){
+            r=c-1;
         }else{
             break;
         }
-        c=(r+l)/2;
+        c=(r+l)/2;    
     }
-    cout<<c+1<<" ";
+
+    if(i>0){
+        cout<<" ";
+    }
+    cout<<c+1;
+
   }
 
   cout<<endl;
