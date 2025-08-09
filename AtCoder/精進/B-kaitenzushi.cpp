@@ -17,7 +17,6 @@ int main() {
   sort(S.begin(),S.end());
   long long num=S[0];
 
- 
   for(int i=0;i<M;i++){
      int j=0;
      while(true){
