@@ -10,9 +10,8 @@ int main() {
   long long ans=0;
 
   for(int i=0;i<N;i++){
-    string S="";
-    for(int j=i;j<N;j++){
-        S+=T[j];
+    for(int j=i+1;j<N;j++){
+        string S=T.substr(i,j);
     }
 
   }
