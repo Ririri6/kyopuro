@@ -10,31 +10,28 @@ int main() {
     cin>>A[i];
   }
   vector<long long> B(M);
+  long long B_max=0;
   for(int i=0;i<M;i++){
     cin>>B[i];
+    if(B_max<B[i]){
+      B_max=B[i];
+    }
   }
-  vector<long long> S=A;
-  sort(S.begin(),S.end());
-  long long num=S[0];
+
+  long long r=B_max;
+  vector<long long> id(200000,-1);
+  for(int i=0;i<N;i++){
+    if(A[i]<=r){
+      for(int j=A[i];j<=r;j++){
+        id[j]=i+1;
+      }
+      r=A[i]-1;
+    }
+  }
+
 
   for(int i=0;i<M;i++){
-     int j=0;
-     while(true){
-        if(B[i]<num){
-            cout<<-1<<endl;
-            break;
-        }
-        if(A[j]<=B[i]){
-          cout<<j+1<<endl;
-          break; 
-        }else{
-          j++;
-        } 
-
-
-     }
-   
-   
-  
+    cout<<id[B[i]]<<endl;
   }
+
 }
