@@ -6,4 +6,9 @@ int main() {
    cin>>N;
 
    long long ans=0;
-   for(int i=2;i<=N;i
+   for(int i=1;i<=N-1;i++){
+    ans+=i;
+   }
+
+   cout<<ans<<endl;
+}
