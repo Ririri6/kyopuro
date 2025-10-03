@@ -1,19 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-int main() {
-   
-}
-
-//二次元のvector
-vector<vector<int>> data(3, vector<int>(4));
-//pair
-vector<pair<long long, long long>> p(N);
-
-
-//グラフ
-#include <bits/stdc++.h>
-using namespace std;
 
 // グラフを表すデータ構造
 using Graph = vector<vector<int>>;
@@ -34,6 +20,17 @@ int main() {
 		G[A].push_back(B);
 		
 		// 無向グラフの場合は次も実施
-		// G[B].push_back(A);
+		G[B].push_back(A);
 	}
+    
+    int max_num=0;
+    int max_number=0;
+    for(int i=0;i<N;i++){
+         if(G[i].size()>max_num){
+            max_num=G[i].size();
+            max_number=i;
+         }
+    }
+
+    cout<<max_number+1<<endl;
 }

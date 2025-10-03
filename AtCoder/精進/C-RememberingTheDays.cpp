@@ -1,19 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-int main() {
-   
-}
-
-//二次元のvector
-vector<vector<int>> data(3, vector<int>(4));
-//pair
-vector<pair<long long, long long>> p(N);
-
-
-//グラフ
-#include <bits/stdc++.h>
-using namespace std;
 
 // グラフを表すデータ構造
 using Graph = vector<vector<int>>;
@@ -23,17 +9,22 @@ int main() {
 	int N, M;
 	cin >> N >> M;
 	Graph G(N);
+    vector<long long> C(M);
+    vector<long long> A(N);
+    vector<long long> B(N);
 	for (int i = 0; i < M; ++i) {
-		int A, B;
-		cin >> A >> B;
-
-        A--;
-        B--;
-
+		int a, b;
+		cin >> a >> b>>C[i];
+        
+         A[i]=a;
+         B[i]=b;
+         
 		// 頂点 A から頂点 B への辺を張る
-		G[A].push_back(B);
+		G[a].push_back(b);
 		
 		// 無向グラフの場合は次も実施
-		// G[B].push_back(A);
+		G[b].push_back(a);
 	}
+
+    
 }
