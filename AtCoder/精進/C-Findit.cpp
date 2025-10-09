@@ -9,21 +9,15 @@ int main() {
    vector<long long> A(N);
    for(int i=0;i<N;i++){
     cin>>A[i];
-   }
+   }   
 
-   using Graph = vector<vector<int>>;
-   Graph G(N);
-   for(int i=0;i<N;i++){
-    G[i+1].push_back(A[i]);
-   }
 
-  
    vector<long long> fl(N+1,0),S;
    long long v=1;
    while(fl[v]==0){
     fl[v]=1;
     S.push_back(v);
-    v=G[v];
+    v=A[v];
    }
 
    vector<long long> B;
